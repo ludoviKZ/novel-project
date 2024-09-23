@@ -17,14 +17,26 @@
 "volume_variance": 0.0
 }
 },
-"style": ""
+"style": "intro"
 },
-"default_portrait": "",
+"default_portrait": "New portrait",
 "description": "",
 "display_name": "voice",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"New portrait": {
+"export_overrides": {
+"image": "\"res://assets/woman.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.6,
+"scene": "",
+"sound_mood": "silence"
+}
+},
 "scale": 1.0
 }

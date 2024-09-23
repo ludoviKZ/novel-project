@@ -29,7 +29,13 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_kmq1b"]
 script = ExtResource("2_ecxhj")
 scene = ExtResource("5_2246r")
-overrides = {}
+overrides = {
+"box_margin_bottom": "30.0",
+"box_panel": "\"vn_textbox_default_panel.tres\"",
+"box_size": "Vector2(1000, 300)",
+"text_size": "40.0",
+"text_use_global_size": "false"
+}
 
 [sub_resource type="Resource" id="Resource_lv42h"]
 script = ExtResource("2_ecxhj")
@@ -53,9 +59,9 @@ overrides = {}
 
 [resource]
 script = ExtResource("10_yqn2f")
-name = "New_File"
+name = "default"
 base_overrides = {
 "global_font_size": "20.0"
 }
 layers = Array[ExtResource("2_ecxhj")]([SubResource("Resource_wbd4s"), SubResource("Resource_tejwn"), SubResource("Resource_slbvq"), SubResource("Resource_kmq1b"), SubResource("Resource_lv42h"), SubResource("Resource_a2rc4"), SubResource("Resource_ohp3i"), SubResource("Resource_k8x08")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 3

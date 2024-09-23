@@ -1,6 +1,7 @@
 [music path="res://assets/Harp.mp3" fade="0.3" volume="1.0"]
 [background arg="res://assets/pexels-kaip-1341279.jpg" fade="0.8" transition="Simple Fade"]
-woman:  ho[speed=0.6]... [speed=1]what a poor little thing,[pause=0.2] you have been neglected for too long[speed=0.6]...
+join woman rightmost [animation="Fade In Down" length="1.0"]
+woman: ho[speed=0.6]... [speed=1]what a poor little thing,[pause=0.2] you have been neglected for too long[speed=0.6]...
 [wait time="0.8"]
 woman: i am sorry for disturbing your rest,[pause=0.2] but your help is dierly needed.
 [wait time="1.2"]
