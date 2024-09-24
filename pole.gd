@@ -1,11 +1,12 @@
 extends RigidBody2D
 
-
+@onready var interaction_area: interactionArea = $interactionArea
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	interaction_area.interact = Callable(self, "_on_interact")
 
-
+func _on_interact():
+	Dialogic.start ("pole")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
