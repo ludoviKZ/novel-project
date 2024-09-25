@@ -9,10 +9,10 @@ const base_text = "[E] to "
 var active_areas = []
 var can_interact = true
 
-func register_area(area: InteractionArea):
+func register_area(area: interactionArea):
 	active_areas.push_back(area)
 #remove interaction label when far
-func unregister_area(area: InteractionArea):
+func unregister_area(area: interactionArea):
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)

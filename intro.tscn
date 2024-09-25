@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://intro.gd" id="1_v4n7x"]
 [ext_resource type="Texture2D" uid="uid://7asjvh0buvku" path="res://assets/grassland_tiles.png" id="2_vycbr"]
 [ext_resource type="PackedScene" uid="uid://d3swbvfngds0t" path="res://character_body_2d.tscn" id="3_a4qou"]
-[ext_resource type="Script" path="res://interaction_area.gd" id="5_1io4t"]
 [ext_resource type="Script" path="res://pole.gd" id="5_fkadh"]
+[ext_resource type="PackedScene" uid="uid://cnpm5dnmsd1ip" path="res://interaction_area.tscn" id="5_oo3np"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7q6p6"]
 texture = ExtResource("2_vycbr")
@@ -1964,11 +1964,11 @@ tile_layout = 5
 tile_size = Vector2i(64, 32)
 sources/1 = SubResource("TileSetAtlasSource_7q6p6")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e38er"]
-radius = 96.0469
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5we7i"]
 size = Vector2(33, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ietx8"]
+radius = 73.1095
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_v4n7x")
@@ -1985,6 +1985,8 @@ collision_enabled = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_a4qou")]
 position = Vector2(717, 453)
+collision_layer = 2
+collision_mask = 1
 
 [node name="pole" type="RigidBody2D" parent="."]
 collision_layer = 3
@@ -1995,16 +1997,13 @@ contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("5_fkadh")
 
-[node name="interactionArea" type="Area2D" parent="pole"]
-script = ExtResource("5_1io4t")
-action_name = "talk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pole/interactionArea"]
-position = Vector2(990, 462)
-shape = SubResource("CircleShape2D_e38er")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pole"]
 position = Vector2(990.5, 461)
 shape = SubResource("RectangleShape2D_5we7i")
 
-[connection signal="body_entered" from="pole" to="pole" method="_on_body_entered"]
+[node name="interaction area" parent="pole" instance=ExtResource("5_oo3np")]
+position = Vector2(992, 462)
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pole/interaction area"]
+shape = SubResource("CircleShape2D_ietx8")

@@ -7,6 +7,3 @@ func _ready():
 
 func _on_interact():
 	Dialogic.start ("pole")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
