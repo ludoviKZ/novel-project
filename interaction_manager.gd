@@ -1,11 +1,34 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var label = $label
 
+const base_text = "[E] to "
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var active_areas = []
+var can_interact = true
+
+func register_area(area: InteractionArea):
+	active_areas.push_back(area)
+#remove interaction label when far
+func unregister_area(area: InteractionArea):
+	var index = active_areas.find(area)
+	if index != -1:
+		active_areas.remove_at(index)
+
+func _prosess(delta):
+	if active_areas.size() > 0 && can_interact:
+		label.show()
+	else:
+		label.hide()
+
+func _input(event):
+	if event.is_action_pressed("interact") && can_interact:
+		if active_areas.size() > 0:
+			can_interact = false
+			label.hide()
+			
+			await active_areas[0].interact.call()
+			
+			can_interact = true
