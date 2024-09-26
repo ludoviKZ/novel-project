@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7asjvh0buvku" path="res://assets/grassland_tiles.png" id="2_vycbr"]
 [ext_resource type="PackedScene" uid="uid://d3swbvfngds0t" path="res://character_body_2d.tscn" id="3_a4qou"]
 [ext_resource type="Script" path="res://pole.gd" id="5_fkadh"]
-[ext_resource type="PackedScene" uid="uid://cnpm5dnmsd1ip" path="res://interaction_area.tscn" id="5_oo3np"]
+[ext_resource type="PackedScene" uid="uid://bibbey48tqpxl" path="res://talk_interaction/talk_area.tscn" id="5_nao62"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7q6p6"]
 texture = ExtResource("2_vycbr")
@@ -1967,8 +1967,8 @@ sources/1 = SubResource("TileSetAtlasSource_7q6p6")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5we7i"]
 size = Vector2(33, 18)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ietx8"]
-radius = 73.1095
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mq4i"]
+radius = 52.2398
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_v4n7x")
@@ -1989,8 +1989,6 @@ collision_layer = 2
 collision_mask = 1
 
 [node name="pole" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
 gravity_scale = 0.0
 can_sleep = false
 contact_monitor = true
@@ -2001,9 +1999,13 @@ script = ExtResource("5_fkadh")
 position = Vector2(990.5, 461)
 shape = SubResource("RectangleShape2D_5we7i")
 
-[node name="interaction area" parent="pole" instance=ExtResource("5_oo3np")]
-position = Vector2(992, 462)
-action_name = "talk"
+[node name="TalkArea" parent="pole" instance=ExtResource("5_nao62")]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pole/interaction area"]
-shape = SubResource("CircleShape2D_ietx8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pole/TalkArea"]
+position = Vector2(990, 459)
+shape = SubResource("CircleShape2D_2mq4i")
+
+[connection signal="body_entered" from="pole/TalkArea" to="pole/TalkArea" method="_on_body_entered"]
+[connection signal="body_exited" from="pole/TalkArea" to="pole/TalkArea" method="_on_body_exited"]

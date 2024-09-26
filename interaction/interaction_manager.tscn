@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://g580chifaaaq"]
 
-[ext_resource type="Script" path="res://interaction_manager.gd" id="1_eli75"]
+[ext_resource type="Script" path="res://interaction/interaction_manager.gd" id="1_eli75"]
 
 [node name="interaction manager" type="Node2D"]
 z_index = 20
@@ -8,13 +8,11 @@ script = ExtResource("1_eli75")
 
 [node name="Label" type="Label" parent="."]
 z_index = 20
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -52.5
-offset_right = 52.5
-offset_bottom = 23.0
-grow_horizontal = 2
+offset_left = 675.0
+offset_top = 261.0
+offset_right = 780.0
+offset_bottom = 284.0
+size_flags_horizontal = 4
 text = "[E] to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
