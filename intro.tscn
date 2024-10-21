@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dhuvgne4b1h4i"]
+[gd_scene load_steps=11 format=4 uid="uid://dhuvgne4b1h4i"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_v4n7x"]
 [ext_resource type="Texture2D" uid="uid://7asjvh0buvku" path="res://assets/grassland_tiles.png" id="2_vycbr"]
 [ext_resource type="PackedScene" uid="uid://d3swbvfngds0t" path="res://character_body_2d.tscn" id="3_a4qou"]
 [ext_resource type="Script" path="res://pole.gd" id="5_fkadh"]
 [ext_resource type="PackedScene" uid="uid://bibbey48tqpxl" path="res://talk_interaction/talk_area.tscn" id="5_nao62"]
+[ext_resource type="PackedScene" uid="uid://ruu76522n46c" path="res://transition.tscn" id="6_rbx5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7q6p6"]
 texture = ExtResource("2_vycbr")
@@ -2000,12 +2001,13 @@ position = Vector2(990.5, 461)
 shape = SubResource("RectangleShape2D_5we7i")
 
 [node name="TalkArea" parent="pole" instance=ExtResource("5_nao62")]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pole/TalkArea"]
 position = Vector2(990, 459)
 shape = SubResource("CircleShape2D_2mq4i")
+
+[node name="transition" parent="." instance=ExtResource("6_rbx5n")]
 
 [connection signal="body_entered" from="pole/TalkArea" to="pole/TalkArea" method="_on_body_entered"]
 [connection signal="body_exited" from="pole/TalkArea" to="pole/TalkArea" method="_on_body_exited"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ruu76522n46c"]
+
+[ext_resource type="Script" path="res://talk_area.gd" id="1_g35cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emuy7"]
+size = Vector2(1920, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd6fm"]
+size = Vector2(1909, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3jjl"]
+size = Vector2(34, 1080)
+
+[node name="transition" type="Node2D"]
+
+[node name="interactup" type="Area2D" parent="."]
+script = ExtResource("1_g35cl")
+
+[node name="Coll down" type="CollisionShape2D" parent="interactup"]
+position = Vector2(957, 1051)
+scale = Vector2(0.997639, -1.66667)
+shape = SubResource("RectangleShape2D_emuy7")
+
+[node name="TalkAreaInteract2" type="Area2D" parent="."]
+script = ExtResource("1_g35cl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TalkAreaInteract2"]
+position = Vector2(959, 15)
+shape = SubResource("RectangleShape2D_fd6fm")
+
+[node name="TalkAreaInteract3" type="Area2D" parent="."]
+script = ExtResource("1_g35cl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TalkAreaInteract3"]
+position = Vector2(16, 536)
+shape = SubResource("RectangleShape2D_b3jjl")
+
+[node name="TalkAreaInteract4" type="Area2D" parent="."]
+script = ExtResource("1_g35cl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TalkAreaInteract4"]
+position = Vector2(1903, 539)
+shape = SubResource("RectangleShape2D_b3jjl")
