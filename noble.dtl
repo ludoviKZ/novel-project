@@ -1,0 +1,8 @@
+a well dressed man is sitting on a rock, next to the village’s entrance, looking downcast; he is eyeing you… quietly judging….
+- you ignore him
+	noble: hold on traveler, if a knight like you happens to come to our village, he must his reasons to, mind sharing your travel with this humble disgraced noble?
+	- you say “i have come to slain great beast that slumbers here, i must have my revenge”
+	noble: well well, a wandering knight coming to this humble village, may i ask what’s your business with us?
+	noble: if[speed=0.6]... [speed=1] during your travels in this land you could find it in your heart to help the poor people of this village, i would be most indebted to you, ho wandering knight
+	- you say nothing
+	- you nod

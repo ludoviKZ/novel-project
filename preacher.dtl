@@ -1,0 +1,20 @@
+[style name="style"]
+[music path="res://assets/Harp.mp3" fade="0.3" volume="1.0"]
+[background arg="res://villaggio sfocato.png" fade="0.5" transition="Push Down"]
+[speed=0.6] an middle aged  woman, who is wearing a bandage around her eyes, is preaching from the steps of the church, his robes suggest he is the priest of the town
+[wait time="0.3"]
+[speed=0.8] the moment you are about to turn your back to him he suddenly turns his eyeless gaze towards you
+[wait time="0.3"]
+character: ha, if mine ears do not deceive me, i believe a new footstep has reached us, end an armed one nonetheless, prey tell, have you been sent by our lord to save us?
+[wait time="0.3"]
+- you say “i have indeed been sent, but not by a higher power, it is -the iron itself-  someone else”
+	knight: i have indeed been sent, but not by a higher power, it is the iron itself
+	character: well[speed=0.6]... [speed=1] it matters not, this all part of his plan after all[speed=0.6]... [speed=1]
+- you say “i indeed have come to help you people, to liberate this place from it’s terrible affliction!”
+	knight: i indeed have come to help you people, to liberate this place from it’s terrible affliction!
+	character: haaa, the lord has blessed us with a champion, praised be the lord!
+- you say nothing
+	knight: [speed=0.4]...
+	character: a silent warrior hu?[speed=0.6]... [speed=1]  well it is of little importance.
+character: Would thou be so kind as to heed our pleight? we have been cursed by a terrible miasma that is blown from the caverns by the Mill.
+character: it wrecks and twists the flesh, creating agonizing pain and suffering, please free us of that terrible plague, please free us from such evil…

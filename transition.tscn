@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ruu76522n46c"]
+[gd_scene load_steps=6 format=3 uid="uid://ruu76522n46c"]
 
+[ext_resource type="Script" path="res://transition.gd" id="1_6wcbm"]
 [ext_resource type="Script" path="res://talk_area.gd" id="1_g35cl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emuy7"]
@@ -12,32 +13,53 @@ size = Vector2(1909, 35)
 size = Vector2(34, 1080)
 
 [node name="transition" type="Node2D"]
+script = ExtResource("1_6wcbm")
 
-[node name="interactup" type="Area2D" parent="."]
+[node name="transitionDOWN" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_g35cl")
 
-[node name="Coll down" type="CollisionShape2D" parent="interactup"]
+[node name="Coll_down" type="CollisionShape2D" parent="transitionDOWN"]
 position = Vector2(957, 1051)
 scale = Vector2(0.997639, -1.66667)
 shape = SubResource("RectangleShape2D_emuy7")
 
-[node name="TalkAreaInteract2" type="Area2D" parent="."]
+[node name="transitionUP" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_g35cl")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TalkAreaInteract2"]
+[node name="Coll_up" type="CollisionShape2D" parent="transitionUP"]
 position = Vector2(959, 15)
 shape = SubResource("RectangleShape2D_fd6fm")
 
-[node name="TalkAreaInteract3" type="Area2D" parent="."]
+[node name="transitionLEFT" type="Area2D" parent="."]
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_g35cl")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TalkAreaInteract3"]
+[node name="Coll_left" type="CollisionShape2D" parent="transitionLEFT"]
 position = Vector2(16, 536)
 shape = SubResource("RectangleShape2D_b3jjl")
 
-[node name="TalkAreaInteract4" type="Area2D" parent="."]
+[node name="transitionRIGHT" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_g35cl")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="TalkAreaInteract4"]
+[node name="Coll_right" type="CollisionShape2D" parent="transitionRIGHT"]
 position = Vector2(1903, 539)
 shape = SubResource("RectangleShape2D_b3jjl")
+
+[connection signal="entered" from="transitionDOWN" to="." method="_on_transition_down_entered"]
+[connection signal="entered" from="transitionUP" to="." method="_on_transition_up_entered"]
+[connection signal="entered" from="transitionLEFT" to="." method="_on_transition_left_entered"]
+[connection signal="entered" from="transitionRIGHT" to="." method="_on_transition_right_entered"]

@@ -1,0 +1,9 @@
+[music path="res://assets/Harp.mp3" fade="0.3" volume="1.0"]
+[background arg="res://villaggio sfocato.png" fade="0.5" transition="Push Down"]
+[style name="style"]
+veteran: ha, a new face, that’s a rarity from this part!
+a man, old and grizzled, talks at you while leaning on a pole, e backens you over with his only good hand
+- you say “how do you know this?"
+veteran: froggy told me, that sad disgraced noble that hangs round’ here, he may not look it but he is even less charming once you get to know him
+veteran: well, i wish you good luck on your journey, you’ll need more than a spare amount!
+with a loud laugh the man returns to his business, distressed in weather we had something to ad to the conversation

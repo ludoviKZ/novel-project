@@ -1,0 +1,16 @@
+[style name="style"]
+[music path="res://assets/Harp.mp3" fade="0.3" volume="1.0"]
+[background arg="res://villaggio sfocato.png" fade="0.5" transition="Push Down"]
+a well dressed man is sitting on a rock, next to the village’s entrance, looking downcast; he is eyeing you… quietly judging….
+- you ignore him
+	noble: hold on traveler, if a knight like you happens to come to our village, he must his reasons to, mind sharing your travel with this humble disgraced noble?
+	- you say “i have come to slain great beast that slumbers here, i must have my revenge”
+	- you say “ i come seeking a great beast that resides here , i must confront it to free myself of my sins”
+- move towards him
+	noble: well well, a wandering knight coming to this humble village, may i ask what’s your business with us?
+	- you say “i have come to slain great beast that slumbers here, i must have my revenge”
+	- you say “ i come seeking a great beast that resides here , i must confront it to free myself of my sins”
+noble: ha, you speak of the giant! he is indeed a terrible foe, and one that wont be lured out so easily,your journey will be precious… but you will find what you seek traveler.
+noble: if… during your travels in this land you could find it in your heart to help the poor people of this village, i would be most indebted to you, ho wandering knight
+- you nod
+- you say nothing

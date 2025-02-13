@@ -4,7 +4,9 @@ class_name  TalkAreaInteract
 
 signal interaction
 signal entered
-
+#use the following to connect interaction or entered signal
+#	var Talk = get_node("TalkArea")
+#	Talk.interaction.connect
 var can_interact = false
 
 func _on_body_entered(body: Node2D) -> void:
